@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Biblioteca</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let libro of listaLibros" [routerLink]="['/detalle', libro.isbn[0]]">
+      <ion-thumbnail slot="start">
+        <img src="https://covers.openlibrary.org/b/isbn/{{libro.isbn[0]}}-M.jpg">
+      </ion-thumbnail>
+      <ion-label>
+      <h5>{{ libro.title }}</h5>
+      <p><b>Autor:</b> {{libro.author_name}}</p>
+      <p><b>Año:</b> {{libro.first_publish_year}}</p>
+      
+    </ion-label>
+    </ion-item>
+</ion-list>
+</ion-content>

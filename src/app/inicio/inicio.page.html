@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <ion-card-header>
+      <h3 color="dark">Bienvenido a iBiblioteca!</h3>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-text color="dark">
+        iBiblioteca es una aplicación desarrollada con Ionic que permite gestionar 
+        una biblioteca.  
+        <p>Para acceder a la biblioteca pulsa en el siguiente botón:</p>
+      </ion-text>
+    </ion-card-content>
+    <ion-button routerLink='/biblioteca' color="white">
+      <ion-icon slot="start" color="dark" name="school"></ion-icon>
+      <ion-text color="dark">
+        Acceso a biblioteca</ion-text>
+    </ion-button>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <h3 color="dark">Información sobre el autor</h3>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text color="dark">
+        Aplicación desarrollada por Francisco Blanco.</ion-text>
+    </ion-card-content>
+    <ion-button routerLink='/autor' color="white">
+      <ion-icon name="person-circle-outline" color="dark"></ion-icon>
+      <ion-text color="dark">
+        Consultar información</ion-text>
+    </ion-button>
+  </ion-card>
+
+</ion-content>
