@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Libro } from './interface/biblioteca-interface';
+import { Libro, listaLibros } from './interface/biblioteca-interface';
 import { BibliotecaService } from './service/biblioteca.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-biblioteca',
@@ -9,16 +10,18 @@ import { BibliotecaService } from './service/biblioteca.service';
 })
 export class BibliotecaPage implements OnInit {
 
-  constructor( private servicio: BibliotecaService) { }
+  constructor( private servicio: BibliotecaService, private http: HttpClient) { }
 
+  encontrado: boolean = false;
   listaLibros: Libro[];
   ngOnInit() {
-    this.mostrarLibros();
+    this.mostrarLibros("piano");
   }
 
-  mostrarLibros(){
-    this.servicio.listarLibros().subscribe(resp =>{
+  mostrarLibros(busqueda: string){
+    this.servicio.listarLibros(busqueda).subscribe(resp =>{
       this.listaLibros = resp.docs;
+      this.encontrado = true;
     });
   }
 }

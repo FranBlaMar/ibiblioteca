@@ -10,6 +10,7 @@ import { DetalleService } from './service/detalle.service';
 })
 export class DetallePage implements OnInit {
 
+  encontrado: boolean = false;
   detallesLibro: listaLibros;
   constructor(private servicioDetalle: DetalleService, private route:ActivatedRoute) { }
 
@@ -21,6 +22,7 @@ export class DetallePage implements OnInit {
     this.servicioDetalle.obtenerDetallesLibro(this.route.snapshot.params["isbn"])
     .subscribe(resp=>{
       this.detallesLibro= resp;
+      this.encontrado = true;
     })
     };
 }

@@ -8,13 +8,13 @@ import { listaLibros } from '../interface/biblioteca-interface';
 export class BibliotecaService {
 
 
-  private url: string = "http://openlibrary.org/search.json?title=piano&limit=7"
+  private url: string = "http://openlibrary.org/search.json?"
 
   constructor(private http: HttpClient) {
   }
   //Devuelvo el observable
-  listarLibros(): Observable<listaLibros>{
-    return this.http.get<listaLibros>(this.url);
+  listarLibros(busqueda: string): Observable<listaLibros>{
+    return this.http.get<listaLibros>(this.url + `title=${busqueda}&limit=7`);
   }
 
 }

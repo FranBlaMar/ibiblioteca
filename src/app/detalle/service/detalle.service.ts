@@ -14,7 +14,6 @@ export class DetalleService {
     let url =`http://openlibrary.org/search.json?isbn=${isbn}`;
     return this.http.get<listaLibros>(url);
   };
-
 }
 
 

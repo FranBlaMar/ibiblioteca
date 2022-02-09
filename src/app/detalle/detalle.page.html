@@ -3,12 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title> {{ detallesLibro.docs[0].title }}</ion-title>
+    <ion-title  *ngIf="encontrado"> {{ detallesLibro.docs[0].title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <!--La pagina se abre encima de la biblioteca, he tenido que añadir fullscreen para que se ocupe toda la pantalla, es solo una solución estetica ya que no coge bien la ruta-->
-<ion-content fullscreen>
+<ion-content *ngIf="encontrado">
   <ion-card>
     <img src="http://covers.openlibrary.org/b/isbn/{{detallesLibro.docs[0].isbn[0]}}-M.jpg" />
     <ion-label>
