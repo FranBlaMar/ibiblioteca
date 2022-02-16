@@ -28,6 +28,7 @@
     "@ionic-native/core": "^5.36.0",
     "@ionic-native/qr-scanner": "^5.36.0",
     "@ionic/angular": "^6.0.0",
+    "@ionic/storage-angular": "^3.0.6",
     "cordova": "^11.0.0",
     "cordova-browser": "6.0.0",
     "native-run": "^1.5.0",
