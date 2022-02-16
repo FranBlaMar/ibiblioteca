@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: 'detalle/:isbn',
     loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
-  },
+  }
 
 ];
 @NgModule({

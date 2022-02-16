@@ -7,8 +7,12 @@
 <ion-content>
   <ion-toolbar>
     <ion-searchbar placeholder="Busqueda de libro..." Animated debounce="700" (search)="mostrarLibros($any($event.target).value)">
-
     </ion-searchbar>
+    <ion-card>
+      <ion-button color="danger" (click)="scanBRcode()" expand="block">
+          Escanear QR
+      </ion-button>
+  </ion-card>
   </ion-toolbar>
   <ion-list *ngIf="encontrado == true">
     <ion-item button *ngFor="let libro of listaLibros" [routerLink]="['/detalle', libro.isbn[0]]">
